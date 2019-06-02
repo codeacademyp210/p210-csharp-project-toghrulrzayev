@@ -1,0 +1,24 @@
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\Backend Task.exe.config
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\Backend Task.exe
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\Backend Task.pdb
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\EntityFramework.dll
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\EntityFramework.xml
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.ClassroomsForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.CodeAcademy.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.EducationsForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.EmployeesForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.GroupsForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.PositionsForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.Properties.Resources.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.StudentsForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.StudentsMarkForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.TasksForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend_Task.TeachersForm.resources
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend Task.csproj.GenerateResource.cache
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend Task.csproj.CoreCompileInputs.cache
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend Task.csproj.CopyComplete
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend Task.exe
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend Task.pdb
+C:\Users\code\Desktop\Backend Project\Backend Task\Backend Task\obj\Debug\Backend Task.csprojAssemblyReference.cache
