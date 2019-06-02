@@ -1,0 +1,185 @@
+CREATE TABLE [Teachers] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(50) NOT NULL,
+	Surname varchar(50) NOT NULL,
+	Speciality varchar(50) NOT NULL,
+	Email varchar(50) NOT NULL UNIQUE,
+	Phone varchar(50) NOT NULL UNIQUE,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_TEACHERS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Classrooms] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(100) NOT NULL UNIQUE,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_CLASSROOMS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Groups] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(100) NOT NULL UNIQUE,
+	ClassroomId integer NOT NULL,
+	TeacherId integer NOT NULL,
+	MentorId integer NOT NULL,
+	Capacity integer NOT NULL,
+	EducationProgramId integer NOT NULL,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_GROUPS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Students] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(100) NOT NULL,
+	Surname varchar(100) NOT NULL,
+	Email varchar(100) NOT NULL UNIQUE,
+	Phone varchar(100) NOT NULL UNIQUE,
+	Fee varchar(100) NOT NULL,
+	GroupId integer NOT NULL,
+	Task varchar(100) NOT NULL,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_STUDENTS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Employees] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(100) NOT NULL,
+	Surname varchar(100) NOT NULL,
+	Email varchar(100) NOT NULL,
+	Phone varchar(100) NOT NULL,
+	Mentor varchar(100) NOT NULL,
+	PositionId integer NOT NULL,
+	[Start Time] datetime NOT NULL,
+	Salary float NOT NULL,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_EMPLOYEES] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Educations] (
+	Id integer identity(1,1) NOT NULL,
+	Name nvarchar(100) NOT NULL,
+	Price float NOT NULL,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_EDUCATIONS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Tasks] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(100) NOT NULL,
+	Deadline datetime NOT NULL,
+	GroupId integer NOT NULL,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_TASKS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Positions] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(255) NOT NULL,
+	Status BIT DEFAULT 1 NOT NULL,
+  CONSTRAINT [PK_POSITIONS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [StudentsMarks] (
+	Id integer identity(1,1) NOT NULL,
+	StudentId integer NOT NULL,
+	TaskId integer NOT NULL,
+	Mark integer NOT NULL,
+  CONSTRAINT [PK_STUDENTSMARKS] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Academy] (
+	Id integer identity(1,1) NOT NULL,
+	Name varchar(255) NOT NULL,
+	Street varchar(255) NOT NULL,
+	Phone varchar(255) NOT NULL,
+  CONSTRAINT [PK_ACADEMY] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+
+
+ALTER TABLE [Groups] WITH CHECK ADD CONSTRAINT [Groups_fk0] FOREIGN KEY ([ClassroomId]) REFERENCES [Classrooms]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Groups] CHECK CONSTRAINT [Groups_fk0]
+GO
+ALTER TABLE [Groups] WITH CHECK ADD CONSTRAINT [Groups_fk1] FOREIGN KEY ([TeacherId]) REFERENCES [Teachers]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Groups] CHECK CONSTRAINT [Groups_fk1]
+GO
+ALTER TABLE [Groups] WITH CHECK ADD CONSTRAINT [Groups_fk2] FOREIGN KEY ([MentorId]) REFERENCES [Employees]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Groups] CHECK CONSTRAINT [Groups_fk2]
+GO
+ALTER TABLE [Groups] WITH CHECK ADD CONSTRAINT [Groups_fk3] FOREIGN KEY ([EducationProgramId]) REFERENCES [Educations]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Groups] CHECK CONSTRAINT [Groups_fk3]
+GO
+
+ALTER TABLE [Students] WITH CHECK ADD CONSTRAINT [Students_fk0] FOREIGN KEY ([GroupId]) REFERENCES [Groups]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Students] CHECK CONSTRAINT [Students_fk0]
+GO
+
+ALTER TABLE [Employees] WITH CHECK ADD CONSTRAINT [Employees_fk0] FOREIGN KEY ([PositionId]) REFERENCES [Positions]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Employees] CHECK CONSTRAINT [Employees_fk0]
+GO
+
+
+ALTER TABLE [Tasks] WITH CHECK ADD CONSTRAINT [Tasks_fk0] FOREIGN KEY ([GroupId]) REFERENCES [Groups]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Tasks] CHECK CONSTRAINT [Tasks_fk0]
+GO
+
+
+ALTER TABLE [StudentsMarks] WITH CHECK ADD CONSTRAINT [StudentsMarks_fk0] FOREIGN KEY ([TaskId]) REFERENCES [Tasks]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [StudentsMarks] CHECK CONSTRAINT [StudentsMarks_fk0]
+GO

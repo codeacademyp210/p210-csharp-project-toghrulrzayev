@@ -1,0 +1,49 @@
+INSERT INTO Academy(Name,Street,Phone)
+VALUES('Code Academy','Nizami kucesi64',3494949)
+
+INSERT INTO Classrooms(Name,Status)
+VALUES('Titan',1),('Merkuri',1),('Venera',1),('Yupiter',1),('Mars',1)
+
+INSERT INTO Educations(Name,Price,Status)
+VALUES('Proqramlasdirma',4900,1),('Web-Dizayn',4300,1),('Qrafik-Dizayn',4000,1),('Sistem-Administratoru',3500,1),('Shebeke',3000,1)
+
+
+INSERT INTO Positions(Name,Status)
+VALUES('CEO',1),('Receptionist',1),('Cleaner',1),('Consultant',1),('Mentor',1),('IT Tech',1)
+
+INSERT INTO Employees(Name,Surname,Email,Phone,Mentor,PositionId,StartTime,Salary,Status)
+VALUES('Sattar','Emrahov','amrahov@code.edu.az',0502111101,'Nicat Abdullayev',6,GETDATE(),3550,1),
+('Vuqar','Sadiqov','vuqar@code.edu.az',0502231401,'Behruz Semenderov',6,GETDATE(),3550,1),
+('Nermin','Abdullayeva','nermin@code.edu.az',0556771202,'Toghrul Rzayev',2,GETDATE(),1500,1),
+('Aide','Kerimova','aida@code.edu.az',0779901920,'Murad Bababzade',3,GETDATE(),850,1),
+('Shamil','Balaxanov','shamil@code.edu.az',0514443322,'Ekber Emenov',1,GETDATE(),2200,1)
+
+INSERT INTO Teachers(Name,Surname,Speciality,Email,Phone,Status)
+VALUES('Sattar','Amrahov','Komputer Elmleri','amrahov@code.edu.az',0552111101,1),
+('Samir','Dadashzade','Informasiya texnologiyalari','samir@code.edu.az',0554444312,1),
+('Vuqar','Babazade','Dizayn','vuqarb@code.edu.az',0516454545,1),
+('Samir','Rzazede','Qrafik-dizayn','rzazede@code.edu.az',0554312321,1),
+('Yusif','Sefirli','Sistem muhendisliyi','yusif@code.edu.az',0777771777,1)
+
+
+INSERT INTO Groups(Name,ClassroomId,TeacherId,MentorId,Capacity,EducationProgramId,Status)
+VALUES('P210',1,1,1,18,1,1),
+('P640',3,2,3,20,1,1),('D433',2,5,5,16,2,1),('QD231',4,4,2,18,3,1),('SA604',5,3,4,12,4,1)
+
+INSERT INTO Students(Name,Surname,Email,Phone,Fee,GroupId,TaskId,Status)
+VALUES('Toghrul','Rzayev','toghrul@code.edu.az',055-949-19-17,3200,1,1,1),
+('Ekber','Emenov','ekber@code.edu.az',055-444-33-22,3200,1,1,1),
+('Hesen','Aliyev','hasan@code.edu.az',051-222-22-22,4300,3,4,1),
+('Shamil','Qocayev','qocayev@code.edu.az',055-404-40-40,4000,4,4,1),
+('Lale','Hummetova','lale@code.edu.az',055-600-00-00,3200,2,5,1)
+
+INSERT INTO Tasks(Name,Deadline,GroupId,Status)
+VALUES('Musa Template', GETDATE(),2,1),
+('C# Entity', GETDATE(),1,1),
+('Nyu-York', GETDATE(),3,1),
+('Ev', GETDATE(),4,1),
+('Backend Task', GETDATE(),1,1)
+
+
+INSERT INTO StudentsMarks(StudentId,TaskId,Mark)
+VALUES(1,2,100),(3,2,85),(5,1,90),(2,5,100),(4,4,65)
